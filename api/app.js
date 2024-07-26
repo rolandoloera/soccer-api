@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-require('./app/auth/auth');
+require('../app/auth/auth');
 
-const routes = require('./app/routes/routes');
+const routes = require('../app/routes/routes');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -16,4 +16,7 @@ const main = () => app.listen(app.get('port'), () => console.log(`Server is runn
 
 main();
 
-// comentario de alma
+//VERCEL
+module.exports = (req, res) => {
+    res.status(200).json({ message: 'Hello, Vercel!' });
+  };
